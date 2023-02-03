@@ -24,15 +24,14 @@
 
 > ./interpolate.py --help
 
-options:
-  --model MODEL    path to model
-  --input INPUT    input directory containing images
-  --output OUTPUT  output directory for interpolated images
-  --scale SCALE    scale factor for interpolated images
-  --multi MULTI    number of frames to interpolate between two input images
-  --buffer BUFFER  number of frames to buffer on scene change
-  --change CHANGE  scene change threshold (lower is more sensitive
-  --fp16           use float16 precision instead of float32
+    --model MODEL    path to model
+    --input INPUT    input directory containing images
+    --output OUTPUT  output directory for interpolated images
+    --scale SCALE    scale factor for interpolated images
+    --multi MULTI    number of frames to interpolate between two input images
+    --buffer BUFFER  number of frames to buffer on scene change
+    --change CHANGE  scene change threshold (lower is more sensitive
+    --fp16           use float16 precision instead of float32
 
 ## Example
 

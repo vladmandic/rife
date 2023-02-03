@@ -1,5 +1,7 @@
 # RIFE: Real-Time Intermediate Flow Estimation for Video Frame Interpolation
 
+Creates sequence of interpolated frames between given input images  
+
 ## Run
 
 > python interpolate.py --input samples/ --output frames/ --buffer 25 --multi 70
@@ -42,7 +44,10 @@
 
 https://user-images.githubusercontent.com/57876960/216691061-97d3c0d1-9eb8-4753-8a5f-d0b8954bb216.mp4
 
-# Credits:
+
+*Note*: Images are generated using [Stable-Diffusion](https://github.com/vladmandic/automatic) with [seed-travel](https://github.com/yownas/seed_travel)
+
+# Credits
 
 - <https://github.com/megvii-research/ECCV2022-RIFE>
 - <https://github.com/hzwer/Practical-RIFE>

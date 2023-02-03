@@ -39,6 +39,8 @@ options:
 - [Inputs](./samples/)
 - [Video](./samples/video.mp4)
 
+https://user-images.githubusercontent.com/57876960/216691061-97d3c0d1-9eb8-4753-8a5f-d0b8954bb216.mp4
+
 # Credits:
 
 - <https://github.com/megvii-research/ECCV2022-RIFE>

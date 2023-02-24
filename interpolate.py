@@ -122,7 +122,7 @@ def interpolate(model_path: str, input_dir: str, output_dir: str, scale: float, 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='interpolate video frames using RIFE')
     parser.add_argument('--model', type=str, default=os.path.join(os.path.dirname(__file__), 'rife/flownet-v46.pkl'), help='path to model')
-    parser.add_argument('--input', type=str, default=None, help='input directory containing images')
+    parser.add_argument('--input', type=str, required=True, default=None, help='input directory containing images')
     parser.add_argument('--output', type=str, default='frames', help='output directory for interpolated images')
     parser.add_argument('--scale', type=float, default=1.0, help='scale factor for interpolated images')
     parser.add_argument('--multi', type=int, default=2, help='number of frames to interpolate between two input images')

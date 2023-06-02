@@ -39,10 +39,12 @@ def interpolate(model_path: str, input_dir: str, output_dir: str, scale: float, 
         load(model_path, fp16)
     videogen = []
     for f in os.listdir(input_dir):
-        if os.path.isfile(f) and filetype.is_image(os.path.join(input_dir, f)):
-            videogen.append(os.path.join(input_dir, f))
-    print('interpolating', len(videogen), 'images')
+        print(f)
+        fn = os.path.join(input_dir, f)
+        if os.path.isfile(fn) and filetype.is_image(fn):
+            videogen.append(fn)
     videogen = sorted(videogen)
+    print(f'input images: {videogen}')
     # videogen.sort(key=lambda x:int(os.path.basename(x[:-4])))
     frame = cv2.imread(videogen[0], cv2.IMREAD_UNCHANGED)[:, :, ::-1].copy()
     h, w, _ = frame.shape

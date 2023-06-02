@@ -38,6 +38,7 @@ Creates sequence of interpolated frames between given input images
 ## Example
 
 [Video](./samples/video.mp4): *9sec at 30fps*
+
 https://github.com/vladmandic/rife/assets/57876960/22ca5650-a770-4adb-b846-6dc06cdc3b26
 
 [Inputs](./samples/grid.jpg): *10 images*

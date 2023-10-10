@@ -37,17 +37,18 @@ Creates sequence of interpolated frames between given input images
 
 ## Example
 
-[Video](./samples/video.mp4): *9sec at 30fps*
+Both examples are created using [SD.Next](https://github.com/vladmandic/automatic)
+
+[Video](./samples/rife.mp4): *2.5sec at 25fps using 16 input images*
+
+### Using [Seed Travel](https://github.com/yownas/seed_travel) extension
 
 https://github.com/vladmandic/rife/assets/57876960/22ca5650-a770-4adb-b846-6dc06cdc3b26
 
-[Inputs](./samples/grid.jpg): *10 images*
+[Video](./samples/video.mp4): *9sec at 30fps using 10 input images*
 ![Inputs](./samples/grid.jpg)
 
-
-*Note*: Images are generated using [Stable-Diffusion](https://github.com/vladmandic/automatic) with [seed-travel](https://github.com/yownas/seed_travel)
-
-# Credits
+## Credits
 
 - <https://github.com/megvii-research/ECCV2022-RIFE>
 - <https://github.com/hzwer/Practical-RIFE>

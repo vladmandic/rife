@@ -39,7 +39,10 @@ Creates sequence of interpolated frames between given input images
 
 Both examples are created using [SD.Next](https://github.com/vladmandic/automatic)
 
+### Using [AnimateDiff](https://github.com/yownas/seed_travel) extension
+
 https://github.com/vladmandic/rife/assets/57876960/65cf5c7d-e376-4ca9-b03e-2c81d2d79b2f
+
 [Video](./samples/rife.mp4): *2.5sec at 25fps using 16 input images*
 
 ### Using [Seed Travel](https://github.com/yownas/seed_travel) extension

@@ -9,7 +9,7 @@ from model_rife import RifeModel
 model: RifeModel = None
 
 
-def load(model_path):
+def load(model_path = '../model/flownet-v46.pkl'):
     global model # pylint: disable=global-statement
     if model is None:
         model = RifeModel()
@@ -48,9 +48,9 @@ def interpolate(image0: np.ndarray, image1: np.ndarray, count: int = 1):
     ph = ((h - 1) // tmp + 1) * tmp
     pw = ((w - 1) // tmp + 1) * tmp
     padding = (0, pw - w, 0, ph - h)
-    I0 = f_pad(torch.from_numpy(np.transpose(image0, (2,0,1))).to('cuda', non_blocking=True).unsqueeze(0).float() / 255.)
-    I1 = f_pad(torch.from_numpy(np.transpose(image1, (2,0,1))).to('cuda', non_blocking=True).unsqueeze(0).float() / 255.)
     with torch.no_grad():
+        I0 = f_pad(torch.from_numpy(np.transpose(image0, (2,0,1))).to('cuda', non_blocking=True).unsqueeze(0).float() / 255.)
+        I1 = f_pad(torch.from_numpy(np.transpose(image1, (2,0,1))).to('cuda', non_blocking=True).unsqueeze(0).float() / 255.)
         output = execute(I0, I1, count)
         for mid in output:
             mid = (((mid[0] * 255.).byte().cpu().numpy().transpose(1, 2, 0)))

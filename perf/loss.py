@@ -2,7 +2,6 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import torchvision.models as models
 
 
 class EPE(nn.Module):
@@ -92,30 +91,3 @@ class MeanShift(nn.Conv2d):
             self.weight.data.mul_(std.view(c, 1, 1, 1))
             self.bias.data = data_range * torch.Tensor(data_mean)
         self.requires_grad = False
-
-
-class VGGPerceptualLoss(torch.nn.Module):
-    def __init__(self, rank=0): # pylint: disable=unused-argument
-        super(VGGPerceptualLoss, self).__init__()
-        pretrained = True
-        self.vgg_pretrained_features = models.vgg19(
-            pretrained=pretrained).features
-        self.normalize = MeanShift([0.485, 0.456, 0.406], [
-                                   0.229, 0.224, 0.225], norm=True).cuda()
-        for param in self.parameters():
-            param.requires_grad = False
-
-    def forward(self, X, Y, indices=None):
-        X = self.normalize(X)
-        Y = self.normalize(Y)
-        indices = [2, 7, 12, 21, 30]
-        weights = [1.0/2.6, 1.0/4.8, 1.0/3.7, 1.0/5.6, 10/1.5]
-        k = 0
-        loss = 0
-        for i in range(indices[-1]):
-            X = self.vgg_pretrained_features[i](X)
-            Y = self.vgg_pretrained_features[i](Y)
-            if i+1 in indices:
-                loss += weights[k] * (X - Y.detach()).abs().mean() * 0.1
-                k += 1
-        return loss

@@ -12,7 +12,6 @@ class RifeModel:
         self.optimG = AdamW(self.flownet.parameters(), lr=1e-6, weight_decay=1e-4)
         self.epe = EPE()
         self.version = 3.9
-        # self.vgg = VGGPerceptualLoss().to(device)
         self.sobel = SOBEL()
         if local_rank != -1:
             self.flownet = DDP(self.flownet, device_ids=[local_rank], output_device=local_rank)
